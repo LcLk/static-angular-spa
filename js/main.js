@@ -7,7 +7,7 @@ app.config( function($routeProvider, $locationProvider) {
         templateUrl: function(args){return "views/step_" + args.number + ".html"},
       }).
       otherwise( { 
-        redirectTo: "/step/1" 
+        redirectTo: "/step/0" 
       });
 });
 
