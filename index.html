@@ -1,8 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-IE">
   <head>
-    
+    <meta charset="UTF-8"> 
+    <script type="text/javascript" src="js/vendor/angular.js"></script>
+    <script type="text/javascript" src="js/vendor/angular-route.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="semantic/packaged/css/semantic.css">
   </head>
-  <body>
-    Welcome to this statically hosted github pages website.
+  <body ng-app="myApp">
+
+    <h1 class="ui header">
+      <i class="code icon"></i>
+      <div class="content">
+        Static Angular Single Page Application
+      </div>
+    </h1>
+
+    <div class="ui pagination menu" ng-controller="NavCtrl">
+      <a class="icon item" href="#!step/{{previousStep()}}">
+        <i class="left arrow icon"></i>
+      </a>
+      <a ng-repeat="step in steps" ng-class="{active: currentStep() == step, item: true}" href="#!step/{{step}}">
+        {{step}}
+      </a>
+      <a class="icon item" href="#!step/{{nextStep()}}">
+        <i class="right arrow icon"></i>
+      </a>
+    </div>
+    <div ng-view>
+      
+    </div>
   </body>
 </html>
